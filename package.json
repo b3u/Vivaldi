@@ -1,6 +1,7 @@
 {
 	"name": "vivaldi",
 	"productName": "Vivaldi",
+	"private": true,
 	"version": "0.1.0",
 	"description": "an awesome music app",
 	"main": "index.js",
@@ -19,8 +20,10 @@
 		"electron-builder": "^22.6.0"
 	},
 	"dependencies": {
+		"devtron": "^1.4.0",
 		"electron-context-menu": "^2.0.0",
 		"electron-debug": "^3.0.1",
+		"electron-reloader": "^1.0.1",
 		"electron-store": "^5.1.1",
 		"electron-unhandled": "^3.0.2",
 		"electron-updater": "^4.3.1",
