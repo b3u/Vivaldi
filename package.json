@@ -8,7 +8,8 @@
 	"repository": "b3u/vivaldi",
 	"scripts": {
 		"postinstall": "electron-builder install-app-deps",
-		"start": "electron .",
+		"style": "gulp watch",
+		"start": "concurrently \"npm:style\" \"electron .\"",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"pack": "electron-builder --dir",
 		"dist": "electron-builder --macos --linux --windows"
@@ -16,8 +17,17 @@
 	"author": "Binyamin Aron Green",
 	"license": "MIT",
 	"devDependencies": {
+		"autoprefixer": "^9.7.6",
+		"concurrently": "^5.2.0",
+		"cssnano": "^4.1.10",
 		"electron": "^8.2.5",
-		"electron-builder": "^22.6.0"
+		"electron-builder": "^22.6.0",
+		"gulp": "^4.0.2",
+		"gulp-postcss": "^8.0.0",
+		"gulp-rename": "^2.0.0",
+		"gulp-sass": "^4.1.0",
+		"gulp-sourcemaps": "^2.6.5",
+		"node-sass": "^4.14.1"
 	},
 	"dependencies": {
 		"devtron": "^1.4.0",
