@@ -1,0 +1,127 @@
+html, body {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	background-color: #efefef;
+	font-family: Inter, Arial, Helvetica, sans-serif;
+}
+.header {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25);
+	padding: 4px 8px;
+	background-color: #fff;
+}
+
+.header--left {
+	margin: 0;
+	padding: 0;
+}
+
+.header--left button {
+	background-color: transparent;
+	border: none;
+}
+
+.volume-tooltip {
+	position: absolute;
+	visibility: hidden;
+	background-color: #ddd;
+	cursor: pointer;
+
+	.custom-range {
+		// customize with js
+		--value: .7;
+
+		--height: 6px;
+		position: relative;
+
+		display: block;
+		width: 140px;
+		height: var(--height);
+
+		button {
+			--radius: 12px;
+
+			position: absolute;
+			border-radius: 50%;
+			top: calc(0px - ((var(--radius) - var(--height)) / 2));
+			left: calc((100% * var(--value)) - (var(--radius)/2));
+			background-color: #000;
+			width: 12px;
+			height: 12px;
+		}
+
+		&:before {
+			content: "";
+			background-color: steelblue;
+			display: block;
+			height: 100%;
+			width: calc(100% * var(--value));
+		}
+	}
+}
+
+.btn--volume:hover + .volume-tooltip {
+	visibility: visible;
+}
+
+.header--center {
+	max-width: 500px;
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	grid-template-rows: auto auto;
+
+	.song_cover {
+		float: left;
+	}
+	.song_details-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.song_info {
+		width: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		font-size: 14px;
+
+		// strong {
+		// 	font-weight: 600;
+		// }
+	}
+	.song_timing {
+		font-size: 13.33px;
+	}
+	button {
+		background-color: transparent;
+		border: none;
+	}
+}
+progress {
+	grid-row: 2/3;
+	grid-column: 2/3;
+
+	appearance: none;
+	height: 6px;
+	width: 100%;
+	max-width: 300px;
+	border-radius: 999px;
+
+	&::-webkit-progress-inner-element {
+		border-radius: 999px;
+	}
+
+	&::-webkit-progress-bar {
+		background-color: #ccc;
+		border-radius: 999px;
+	}
+
+	&::-webkit-progress-value {
+		background-color: steelblue;
+		border-radius: 999px;
+	}
+}
+
+

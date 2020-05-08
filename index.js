@@ -12,6 +12,11 @@ unhandled();
 debug();
 contextMenu();
 
+// For electron-reloader
+try {
+	require('electron-reloader')(module);
+} catch (_) {}
+
 // Note: Must match `build.appId` in package.json
 app.setAppUserModelId('com.binyamingreen.Vivaldi');
 
@@ -33,8 +38,8 @@ const createMainWindow = async () => {
 	const win = new BrowserWindow({
 		title: app.name,
 		show: false,
-		width: 600,
-		height: 400
+		width: 900,
+		height: 550
 	});
 
 	win.on('ready-to-show', () => {

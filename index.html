@@ -3,8 +3,92 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Vivaldi</title>
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	Hi
+	<header class="header">
+		<menu type="toolbar" class="header--left">
+			<button id="btnBack">
+				<img src="./public/assets/icons/bx-rewind.svg" alt="Go Back">
+			</button>
+			<button id="btnPlay">
+				<img src="./public/assets/icons/bx-play.svg" alt="Start playback">
+				<img src="./public/assets/icons/bx-pause.svg" alt="Pause playback" hidden>
+			</button>
+			<button id="btnForward">
+				<img src="./public/assets/icons/bx-fast-forward.svg" alt="Go Forward">
+			</button>
+			<button id="btnVolume" class="btn--volume">
+				<img src="./public/assets/icons/bxs-volume-full.svg" alt="Adjust Volume">
+			</button>
+			<div class="volume-tooltip">
+				<!-- Customize with css variables -->
+				<div class="custom-range" role="slider" data-value=".7">
+					<button>
+						<span hidden>slide me</span>
+					</button>
+				</div>
+			</div>
+		</menu>
+		<div class="header--center">
+			<img class="song_cover" src="./public/assets/cover.jpg" alt="" width="65">
+			<div class="song_details-container">
+				<button id="btnRepeat">
+					<img src="./public/assets/icons/bx-repeat.svg" alt="Repeat">
+				</button>
+				<button id="btnShuffle">
+					<img src="./public/assets/icons/bx-shuffle.svg" alt="shuffle">
+				</button>
+				<p class="song_info"><strong id="songTitle">Lo Nafsik Lirkod</strong> by <strong id="songArtist">Ari Goldwag</strong> on <strong>A Cappella Soul</strong></p>
+				<p class="song_timing"><span id="currentTime">00:23</span>/<span id="totalTime">03:08</span></p>
+			</div>
+			<progress value="0.3"></progress>
+			<img src="./public/assets/icons/bx-list-ul.svg" alt="Queue">
+		</div>
+		<div class="header--right">
+			<input type="search" placeholder="Search">
+		</div>
+	</header>
+	<main>
+		<table>
+			<thead>
+				<th>Title</th>
+				<th>Length</th>
+				<th>Artist</th>
+				<th>Album</th>
+				<th>Genre</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>The Rocky Road to Dublin</td>
+					<td>02:35</td>
+					<td>The Dubliners</td>
+					<td>The Ultimate Collection - The Spirit of the Irish</td>
+					<td>Folk</td>
+				</tr>
+				<tr>
+					<td>Machar</td>
+					<td>04:12</td>
+					<td>Ari Goldwag</td>
+					<td>A Cappella Soul 5</td>
+					<td>A Cappella</td>
+				</tr>
+				<tr>
+					<td>Lo Nafsik Lirkod</td>
+					<td>04:21</td>
+					<td>Ari Goldwag</td>
+					<td>A Cappella Soul 5</td>
+					<td>A Cappella</td>
+				</tr>
+				<tr>
+					<td>Happy Together</td>
+					<td>02:57</td>
+					<td>The Turtles</td>
+					<td>Happy Together</td>
+					<td>Pop</td>
+				</tr>
+			</tbody>
+		</table>
+	</main>
 </body>
 </html>
