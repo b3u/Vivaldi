@@ -12,7 +12,7 @@
 		"start": "concurrently \"npm:style\" \"electron .\"",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"pack": "electron-builder --dir",
-		"dist": "electron-builder --macos --linux --windows"
+		"dist": "electron-builder -mwl"
 	},
 	"author": "Binyamin Aron Green",
 	"license": "MIT",
